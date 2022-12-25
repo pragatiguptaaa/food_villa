@@ -7,14 +7,19 @@
         <title>Namaste React</title>
     </head>
     <body>
+        <h1>Header</h1>
         <div id="root"></div>
+        <h1> Footer</h1>
     
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script>
-        const heading = React.createElement("h1", {}, "Namaste React from React");
+        const heading2 = React.createElement("h2", {}, "Heading 2 by React");
+        const heading3 = React.createElement("h3", {}, "Heading 3 by React");
+        const divContainer = React.createElement("div", {}, [heading2, heading3]);
         const root = ReactDOM.createRoot(document.getElementById("root"));
-        root.render(heading);
+        root.render(divContainer);
     </script>
+
     </body>
 </html>
