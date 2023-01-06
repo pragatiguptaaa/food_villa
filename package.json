@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/pragatiguptaaa/namaste-react-hello-world/issues"
   },
-  "homepage": "https://github.com/pragatiguptaaa/namaste-react-hello-world#readme"
+  "homepage": "https://github.com/pragatiguptaaa/namaste-react-hello-world#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
