@@ -10,14 +10,8 @@
         <h1>Header</h1>
         <div id="root"></div>
         <h1> Footer</h1>
-    
-    <script>
-        const heading2 = React.createElement("h2", {}, "Heading 2 by React");
-        const heading3 = React.createElement("h3", {}, "Heading 3 by React");
-        const divContainer = React.createElement("div", {}, [heading2, heading3]);
-        const root = ReactDOM.createRoot(document.getElementById("root"));
-        root.render(divContainer);
-    </script>
 
+    <!-- Only module type script(App.js here) can use import statement-->
+    <script type="module" src="App.js"></script>
     </body>
 </html>
