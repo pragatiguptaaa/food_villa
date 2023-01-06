@@ -1,8 +1,7 @@
 {
   "name": "namaste-react-hello-world",
   "version": "1.0.0",
-  "description": "My first rect project",
-  "main": "App.js",
+  "description": "My first react project",
   "scripts": {
     "build": "parcel build index.html",
     "start": "parcel index.html",
