@@ -4,9 +4,9 @@ import ReactDOM from 'react-dom/client';
 
 const NestedHeader =  () =>  {
 return (<div className ="title">
-             <h1>Heading 1 by JSX</h1>
-             <h2>Heading 2 by JSX</h2>
-             <h3>Heading 3 by JSX</h3>
+             <h1 key ="title h1">Heading 1 by JSX</h1>
+             <h2 key ="title h2">Heading 2 by JSX</h2>
+             <h3 key ="title h3">Heading 3 by JSX</h3>
          </div>);
 }
 
