@@ -1,0 +1,19 @@
+{
+  "name": "namaste-react-hello-world",
+  "version": "1.0.0",
+  "description": "My first rect project",
+  "main": "App.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pragatiguptaaa/namaste-react-hello-world.git"
+  },
+  "author": "Pragati Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pragatiguptaaa/namaste-react-hello-world/issues"
+  },
+  "homepage": "https://github.com/pragatiguptaaa/namaste-react-hello-world#readme"
+}
