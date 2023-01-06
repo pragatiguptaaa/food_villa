@@ -1,0 +1,8 @@
+#Can be regenerated sing package.json and package-lock.json files.
+node_modules/
+
+#Cache maintained by parcel. This will be created by parcel in prod env by it own. No need to use that of dev env.
+ .parcel-cache/
+
+#Created by parcel.
+ dist/
