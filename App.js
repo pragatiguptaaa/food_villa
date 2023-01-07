@@ -42,17 +42,24 @@ const HeaderComponent = () =>{
     );
 };
 
+const burgerKing = {
+    name: "Burger King",
+    image: "https://b.zmtcdn.com/data/pictures/chains/6/18347416/c9fbbf2eed4d4ab83ce63b114e76b57f.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*",
+    cusines: ["Burger", "American"],
+    rating: "4.2"
+}
+
 const RestaurantCard = () =>{
     return (
         <div className="restaurantCard">
             <img alt ="Burger king image"
-                src="https://b.zmtcdn.com/data/pictures/chains/6/18347416/c9fbbf2eed4d4ab83ce63b114e76b57f.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*" />
-            <h2> Burger King</h2>
-            <h3> Burgers, American</h3>
-            <h4> 4.2 stars</h4>
+                src= {burgerKing.image} ></img>
+            <h2> {burgerKing.name} </h2>
+            <h3> {burgerKing.cusines.join(",")} </h3>
+            <h4> {burgerKing.rating} stars </h4>
         </div>
-    )
-}
+    );
+};
 
 const Body = () =>{
     return (<RestaurantCard/>);
