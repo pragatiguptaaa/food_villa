@@ -15,3 +15,13 @@
 .nav-items > ul > li{
     padding: 20px;
 }
+
+.restaurantCard{
+    width: 200px;
+    border: 1px solid black;
+}
+
+.restaurantCard > img{
+    width: 1000%;
+}
+

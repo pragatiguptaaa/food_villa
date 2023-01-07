@@ -42,8 +42,20 @@ const HeaderComponent = () =>{
     );
 };
 
+const RestaurantCard = () =>{
+    return (
+        <div className="restaurantCard">
+            <img alt ="Burger king image"
+                src="https://b.zmtcdn.com/data/pictures/chains/6/18347416/c9fbbf2eed4d4ab83ce63b114e76b57f.jpg?fit=around|771.75:416.25&crop=771.75:416.25;*,*" />
+            <h2> Burger King</h2>
+            <h3> Burgers, American</h3>
+            <h4> 4.2 stars</h4>
+        </div>
+    )
+}
+
 const Body = () =>{
-    return (<h4> Body </h4>);
+    return (<RestaurantCard/>);
 };
 
 const Footer = () =>{
