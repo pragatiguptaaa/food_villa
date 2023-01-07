@@ -49,14 +49,14 @@ const restaurantList =
     {"type":"restaurant","data":{"type":"F","id":"261261","name":"Hotel Empire","uuid":"1737faa1-3303-4f10-9111-74193f23c459","city":"1","area":"Sarjapur Road","totalRatingsString":"1000+ ratings","cloudinaryImageId":"ue1tt2ujt2ybghd60bs0","cuisines":["North Indian","Kebabs","Biryani"],"tags":[],"costForTwo":45000,"costForTwoString":"₹450 FOR TWO","deliveryTime":37,"minDeliveryTime":37,"maxDeliveryTime":37,"slaString":"37 MINS","lastMileTravel":5,"slugs":{"restaurant":"hotel-empire-bellandur-sarjapur-bellandur-sarjapur","city":"bangalore"},"cityState":"1","address":"Countryside Layout, Rainbow Drive, Bengaluru, Karnataka 560035","locality":"Countryside Layout","parentId":475,"unserviceable":false,"veg":false,"select":false,"favorite":false,"tradeCampaignHeaders":[],"aggregatedDiscountInfo":{"header":"10% off","shortDescriptionList":[{"meta":"10% off | Use PARTY","discountType":"Percentage","operationType":"RESTAURANT"}],"descriptionList":[{"meta":"10% off | Use code PARTY","discountType":"Percentage","operationType":"RESTAURANT"}],"subHeader":"","headerType":0,"superFreedel":""},"aggregatedDiscountInfoV2":{"header":"10% OFF","shortDescriptionList":[{"meta":"Use PARTY","discountType":"Percentage","operationType":"RESTAURANT"}],"descriptionList":[{"meta":"10% off | Use code PARTY","discountType":"Percentage","operationType":"RESTAURANT"}],"subHeader":"","headerType":0,"superFreedel":""},"chain":[],"feeDetails":{"fees":[],"totalFees":0,"message":"","title":"","amount":"","icon":""},"availability":{"opened":true,"nextOpenMessage":"","nextCloseMessage":""},"longDistanceEnabled":0,"rainMode":"NONE","thirdPartyAddress":false,"thirdPartyVendor":"","adTrackingID":"","badges":{"imageBased":[],"textBased":[],"textExtendedBadges":[]},"lastMileTravelString":"5 kms","hasSurge":false,"sla":{"restaurantId":"261261","deliveryTime":37,"minDeliveryTime":37,"maxDeliveryTime":37,"lastMileTravel":5,"lastMileDistance":0,"serviceability":"SERVICEABLE","rainMode":"NONE","longDistance":"NOT_LONG_DISTANCE","preferentialService":false,"iconType":"EMPTY"},"promoted":false,"avgRating":"4.1","totalRatings":1000,"new":false},"subtype":"basic"}];
 
 
-const RestaurantCard = () =>{
+const RestaurantCard = (props) =>{
     return (
         <div className="restaurantCard">
             <img alt ="Burger king image"
-                src= {"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+restaurantList[0].data?.cloudinaryImageId} ></img>
-            <h2> {restaurantList[0].data?.name} </h2>
-            <h3> {restaurantList[0].data?.cuisines.join(",")} </h3>
-            <h4> {restaurantList[0].data?.avgRating} stars </h4>
+                src= {"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+props.restaurant.data?.cloudinaryImageId} ></img>
+            <h2> {props.restaurant.data?.name} </h2>
+            <h3 style ={{wordWrap:'break-word'}}> {props.restaurant.data?.cuisines.join(",")} </h3>
+            <h4> {props.restaurant.data?.avgRating} stars </h4>
         </div>
     );
 };
@@ -64,9 +64,9 @@ const RestaurantCard = () =>{
 const Body = () =>{
     return (
     <div className="restaurant-list">
-        <RestaurantCard/>
-        <RestaurantCard/>
-        <RestaurantCard/>
+        <RestaurantCard restaurant = {restaurantList[0]}/>
+        <RestaurantCard restaurant = {restaurantList[1]}/>
+        <RestaurantCard restaurant = {restaurantList[2]}/>
     </div>);
 };
 
