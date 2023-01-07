@@ -2,28 +2,51 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const AppLayout = () =>{
-    return(
-            {
-              /**
-               -Header
-                    -Logo
-                    -Nav bar items
-               -Body
-                    -Search Bar
-                    -Restaurant list
-                        -Restaurant Card
-                            -Image
-                            -Name
-                            -Rating
-                            -Cusines
-              -Footer
-                    -Copyright
-                    -Other important links 
-               **/  
-            }
+
+/**
+    -Header
+        -Logo
+        -Nav bar items
+    -Body
+        -Search Bar
+        -Restaurant list
+             -Restaurant Card
+                -Image
+                -Name
+                -Rating
+                -Cusines
+        -Footer
+            -Copyright
+            -Other important links 
+**/ 
+const TitleComponent = () =>{
+    return (
+        <img className="logo" alt ="Food Villa Logo"
+             src ="https://i.pinimg.com/474x/e6/17/f1/e617f1bfb9af4d9cf132cd3dec0da072.jpg" />
     );
 };
 
+const HeaderComponent = () =>{
+    return(
+        <div className='header'>
+            <TitleComponent />
+            <div className='nav-items'>
+                <ul>
+                    <li>Home</li>
+                    <li>Contact</li>
+                    <li>About</li>
+                    <li>Cart</li>
+                </ul>
+            </div>
+        </div>
+    );
+};
+
+const FoodVillaAppLayout = () =>{
+    return(
+           <HeaderComponent/>    
+          );
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<NestedHeader />);
+root.render(<FoodVillaAppLayout />);
