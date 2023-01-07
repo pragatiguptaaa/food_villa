@@ -42,9 +42,22 @@ const HeaderComponent = () =>{
     );
 };
 
-const FoodVillaAppLayout = () =>{
+const Body = () =>{
+    return (<h4> Body </h4>);
+};
+
+const Footer = () =>{
+    return (<h4> Footer </h4>);
+};
+
+const FoodVillaAppLayout = () => {
     return(
-           <HeaderComponent/>    
+           <>
+                <HeaderComponent/>  
+                <Body/>
+                <Footer/> 
+            </>
+         
           );
 };
 
