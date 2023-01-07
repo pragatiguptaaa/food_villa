@@ -2,15 +2,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-const Heading1 = () =>{ return(<h1 key ="title h1">Heading 1 by JSX</h1>);}
-
-const NestedHeader =  () =>  {
-return (<div className ="title">
-             <Heading1 />
-             <h2 key ="title h2">Heading 2 by JSX</h2>
-             <h3 key ="title h3">Heading 3 by JSX</h3>
-         </div>);
-}
+const AppLayout = () =>{
+    return(
+            {
+              /**
+               -Header
+                    -Logo
+                    -Nav bar items
+               -Body
+                    -Search Bar
+                    -Restaurant list
+                        -Restaurant Card
+                            -Image
+                            -Name
+                            -Rating
+                            -Cusines
+              -Footer
+                    -Copyright
+                    -Other important links 
+               **/  
+            }
+    );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<NestedHeader />);
