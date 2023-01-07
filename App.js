@@ -62,7 +62,12 @@ const RestaurantCard = () =>{
 };
 
 const Body = () =>{
-    return (<RestaurantCard/>);
+    return (
+    <div className="restaurant-list">
+        <RestaurantCard/>
+        <RestaurantCard/>
+        <RestaurantCard/>
+    </div>);
 };
 
 const Footer = () =>{
