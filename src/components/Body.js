@@ -4,6 +4,7 @@ import {useState} from 'react';
 
 const Body = () =>{
     const [searchText, setSearchText] = useState("KFC");
+    const [searchClicked, setSearchClicked] = useState("false");
     return (
         <>
             <div className = "search-container">
@@ -16,7 +17,11 @@ const Body = () =>{
                         setSearchText(e.target.value);
                     }} >
                 </input>
-                <button className='="search-button'> Search {searchText}</button>
+                <button 
+                    className="search-button"
+                    onClick ={() => setSearchClicked(!searchClicked)}> 
+                    Search {searchText} {searchClicked}.
+                </button>
             </div>
             <div className="restaurant-list">
                 {
