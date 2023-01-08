@@ -1,8 +1,9 @@
 import RestaurantCard from './RestaurantCard.js';
 import { restaurantList } from '../constants.js';
+import {useState} from 'react';
 
 const Body = () =>{
-    const searchText ="KFC";
+    const [searchText, setSearchText] = useState("KFC");
     return (
         <>
             <div className = "search-container">
@@ -12,7 +13,7 @@ const Body = () =>{
                     placeholder="search"
                     value={searchText}
                     onChange = {(e) =>{
-                        searchText = e.target.value;
+                        setSearchText(e.target.value);
                     }} >
                 </input>
                 <button className='="search-button'> Search {searchText}</button>
