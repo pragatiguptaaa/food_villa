@@ -6,12 +6,18 @@ class ProfileClass extends React.Component{
     constructor(props)
     {
         super(props);
+        console.log("Profile - Child - Constructor");
         this.state = {
             count:0
         }
     }
-    
+
+    componentDidMount(){
+        console.log("Profile - Child - ComponentDidMount");
+    }
+
     render(){
+        console.log("Profile - Child -  Render")
         const {count} = this.state;
         return (
             <>
