@@ -1,6 +1,6 @@
 import React from "react";
 
-const Error = () =>{
+const VillaErrorPage = () =>{
     return(
         <div>
             Oops, something went wrong!
@@ -8,4 +8,4 @@ const Error = () =>{
     );
 };
 
-export default Error;
+export default VillaErrorPage;

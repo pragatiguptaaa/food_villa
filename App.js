@@ -2,8 +2,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
+import VillaErrorPage from './src/components/VillaErrorPage';
 import AboutUs from './src/components/AboutUs';
-import Profile from './src/components/Profile';
+import ProfileClass from './src/components/ProfileClass';
 
 /**
     -Header
@@ -59,7 +60,7 @@ const foodVillaAppRouter = createBrowserRouter([
     {
         path: "/",
         element: <FoodVillaAppLayout/>,
-        errorElement: <Error/>,
+        errorElement: <VillaErrorPage/>,
         children: 
         [
             {
@@ -69,7 +70,7 @@ const foodVillaAppRouter = createBrowserRouter([
                 [
                     {
                         path: "profile",              //Absolute Path : /about/profile
-                        element: <Profile/>
+                        element: <ProfileClass />
                     }
                 ]
             }
