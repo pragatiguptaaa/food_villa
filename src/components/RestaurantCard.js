@@ -1,3 +1,5 @@
+import React from "react";
+
 import { RESTAURANT_IMG_COMMON_URL } from '../constants.js';
 
 const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating}) =>{

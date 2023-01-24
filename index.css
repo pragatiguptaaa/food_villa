@@ -1,3 +1,4 @@
+/* Header */
 .header{
     display: flex;
     border: 1px solid black;
@@ -5,22 +6,27 @@
     margin:20px;
     padding:5px;
 }
+/* Header */
 .logo{
     width: 150px;
 }
+/* Header */
 .nav-items > ul{
     display: flex;
     list-style-type: none;
 }
+/* Header */
 .nav-items > ul > li{
     padding: 20px;
 }
 
+/* Body */
 .restaurant-list{
     display:flex;
     justify-content: space-around;
 }
 
+/*Restaurant Card*/
 .restaurantCard{
     width: 300px;
     border: 1px solid black;
@@ -28,6 +34,7 @@
     padding:25px;
 }
 
+/*Restaurant Card*/
 .restaurantCard > img{
     width: 100%;
 }

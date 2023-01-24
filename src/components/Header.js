@@ -1,3 +1,5 @@
+import React from "react";
+
 //Named export
  const Title= () =>{
     return (
