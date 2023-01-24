@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 //Named export
  const Title= () =>{
@@ -9,6 +10,9 @@ import React from "react";
 };
 
 const Header = () =>{
+
+    const [loggedIn, setLoggedIn] = useState(true);
+
     return(
         <div className='header'>
             <Title />
@@ -19,6 +23,9 @@ const Header = () =>{
                     <li>About</li>
                     <li>Cart</li>
                 </ul>
+                <button onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
+                        Click here to {loggedIn?  "Logout" : "Login" }
+                 </button> 
             </div>
         </div>
     );
