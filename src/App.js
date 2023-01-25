@@ -12,6 +12,7 @@ import Cart from './components/Cart.js';
 import FoodVillaErrorPage from './components/FoodVillaErrorPage.js';
 import AboutUs from "./components/AboutUs";
 import Profile from './components/Profile.js';
+import RestaurantDetails from './components/RestaurantDetails.js';
 
 /**
     -Header
@@ -45,17 +46,18 @@ const foodVillaAppRouter = createBrowserRouter([
     path: "/",
     element: <FoodVillaAppLayout />,
     errorElement: <FoodVillaErrorPage />,
-    children:[
+    children:
+    [
         {
-            path: "",                   //absolute path: "/"
+            path: "",                           //absolute path: "/"
             element:<Body />
         },
         {
-            path:"about",                //absolute path: "/about"
+            path:"about",                       //absolute path: "/about"
             element: <AboutUs />,
             children:[
                 {
-                    path:"",            //absolute path: "/about "
+                    path:"",                    //absolute path: "/about "
                     element:<Profile />
                 },
                 {
@@ -65,12 +67,17 @@ const foodVillaAppRouter = createBrowserRouter([
             ]
         },
         {
-            path:"contact",
+            path:"contact",                     //absolute path: "/contact"
             element:<ContactUs/>
         },
         {
-            path:"cart",  
+            path:"cart",                        //absolute path: "/cart"
             element: <Cart/>
+        },
+        {
+            /*Dynamic Routing : Step 1: Attach element to dynamic path */
+            path:"restaurant/:restaurantId",              //absolute path: "/restaurant/:restaurantId" :restaurantId --- dynamic value
+            element:<RestaurantDetails />
         }
     ]
 }
