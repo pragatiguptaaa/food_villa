@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import Logo from "../assets/images/food_villa_downloaded.png"
+import { Link } from "react-router-dom";
+import Logo from "../assets/images/food_villa_downloaded.png";
 
 //Named export
  const Title= () =>{
@@ -19,10 +20,10 @@ const Header = () =>{
             <Title />
             <div className='nav-items'>
                 <ul>
-                    <li>Home</li>
-                    <li>Contact</li>
-                    <li>About</li>
-                    <li>Cart</li>
+                    <Link to ="/"><li>Home</li></Link>
+                    <Link to ="/contact"><li>Contact</li></Link>
+                    <Link to ="/about"><li>About</li></Link>
+                    <Link to ="/cart"><li>Cart</li></Link>
                 </ul>
                 <button onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
                         Click here to {loggedIn?  "Logout" : "Login" }

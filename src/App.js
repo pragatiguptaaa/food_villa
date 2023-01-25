@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Header from './components/Header.js';
 import Body from './components/Body';
 import {Footer} from './components/Footer';
+import ContactUs from './components/ContactUs.js';
+import Cart from './components/Cart.js';
 
 import FoodVillaErrorPage from './components/FoodVillaErrorPage.js';
 import AboutUs from "./components/AboutUs";
@@ -16,16 +18,16 @@ import Profile from './components/Profile.js';
         -Logo
         -Nav bar items
     -Body
-        -Search Bar
+        -Search Input and Search Button
         -Restaurant list
              -Restaurant Card
                 -Image
                 -Name
                 -Rating
                 -Cusines
-        -Footer
-            -Copyright
-            -Other important links 
+    -Footer
+        -Copyright
+        -Other important links 
 **/ 
 
 const FoodVillaAppLayout = () => {
@@ -46,17 +48,29 @@ const foodVillaAppRouter = createBrowserRouter([
     children:[
         {
             path: "",                   //absolute path: "/"
-            element:<Body/>
+            element:<Body />
         },
         {
             path:"about",                //absolute path: "/about"
             element: <AboutUs />,
             children:[
                 {
-                    path:"profile",      //absolute path: "/about/profile"
-                    element:<Profile/>
+                    path:"",            //absolute path: "/about "
+                    element:<Profile />
+                },
+                {
+                    path:"profile",            //absolute path: "/about/profile"
+                    element:<Profile />
                 }
             ]
+        },
+        {
+            path:"contact",
+            element:<ContactUs/>
+        },
+        {
+            path:"cart",  
+            element: <Cart/>
         }
     ]
 }
