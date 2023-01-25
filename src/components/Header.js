@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import Logo from "../assets/images/food_villa_downloaded.png"
 
 //Named export
  const Title= () =>{
     return (
-        <img className="logo" alt ="Food Villa Logo"
-             src ="https://i.pinimg.com/474x/e6/17/f1/e617f1bfb9af4d9cf132cd3dec0da072.jpg" />
+        <img className="logo" alt ="Food Villa Logo" src ={Logo} />
+            //  src ="https://i.pinimg.com/474x/e6/17/f1/e617f1bfb9af4d9cf132cd3dec0da072.jpg" />
     );
 };
 
