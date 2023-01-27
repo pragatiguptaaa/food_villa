@@ -1,24 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import Shimmer from "./Shimmer";
-import { RESTAURANT_IMG_COMMON_URL, RESTAURANT_DETAILS_COMMON_URL } from "../constants";
+import { RESTAURANT_IMG_COMMON_URL } from "../constants";
+import useRestaurantDetails from "../utils/useRestaurantDetails";
 
 /**Dynamic Routing : Step 3: Read dynamic URL to show details */
 const RestaurantDetails = () => {
 
     const {restaurantId} = useParams();
-    const [restaurantDetails , setRestaurantDetails] = useState({});
-
-    async function getResturantDetails(){
-        const data = await fetch( RESTAURANT_DETAILS_COMMON_URL + restaurantId );
-        const json = await data.json();
-        console.log(json.data);
-        setRestaurantDetails(json.data);
-    }
-
-    useEffect(()=>{
-        getResturantDetails();
-    },[]);
+    const restaurantDetails = useRestaurantDetails(restaurantId);
 
     return ( (!restaurantDetails)
              ? (<Shimmer/>) 
@@ -33,7 +23,7 @@ const RestaurantDetails = () => {
              <div>
                 <h1>Today Menu</h1>
                  <ul>
-                    { Object.values(restaurantDetails?.menu?.items).map((item) =>(
+                    { restaurantDetails?.menu?.items && Object.values(restaurantDetails?.menu?.items).map((item) =>(
                                <li key = {item.id}> {item.name} </li>
                     ))}
                 </ul>

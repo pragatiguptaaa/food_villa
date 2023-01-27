@@ -5,6 +5,6 @@ const Shimmer = () =>{
      <h1> Hello, I am Shimmer.</h1>
     </>
     );
-}
+};
 
 export default Shimmer;
