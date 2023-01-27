@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import useRestaurants from '../utils/useRestaurants.js';
 
 import RestaurantCard from './RestaurantCard.js';
 import Shimmer from './Shimmer';
-import {SWIGGY_GET_ALL_RESTAURANTS_URL } from '../constants.js';
-
 
 function filterData(searchText, allRestaurants)
  {
@@ -18,22 +17,8 @@ function filterData(searchText, allRestaurants)
 const Body = () =>{
 
     const [searchText, setSearchText] = useState("");
-    const [allRestaurants, setAllRestaurants] = useState([]);
-    const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-
-    async function getRestaurants()
-   {
-    const data = await fetch(SWIGGY_GET_ALL_RESTAURANTS_URL);
-    const json = await data.json();
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    }
-
-    useEffect(()=>{
-       getRestaurants();
-   }, []);
-
-
+    const [allRestaurants, filteredRestaurants, setFilteredRestaurants] = useRestaurants();
+    
     return  (   (allRestaurants?.length === 0 )
                 ? (<Shimmer />)
                 :(
@@ -64,7 +49,6 @@ const Body = () =>{
                                 </>)
                                 : filteredRestaurants?.map((restaurant) =>{ 
                                   return (
-                                            /*Dynamic Routing : Step 2: Use "Link" to make click on this link to a partiuar URL*/
                                             <Link to = {"/restaurant/"+restaurant.data.id} key ={restaurant.data.id}>
                                                 <RestaurantCard {...restaurant.data} />
                                             </Link> 
