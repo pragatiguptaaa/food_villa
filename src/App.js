@@ -1,5 +1,5 @@
 // These are being imported from node_modues now(We have Removed all CDN links).
-import React, {lazy} from 'react';
+import React, {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -14,6 +14,9 @@ import FoodVillaErrorPage from './components/FoodVillaErrorPage.js';
 import AboutUs from "./components/AboutUs";
 import Profile from './components/Profile.js';
 import RestaurantDetails from './components/RestaurantDetails.js';
+import Shimmer from './components/Shimmer.js';
+
+
 
 /**
     -Header
@@ -73,11 +76,15 @@ const foodVillaAppRouter = createBrowserRouter([
         },
         {
             path:"cart",                        //absolute path: "/cart"
-            element: <Cart/>
+            element: (<Suspense fallback = {<ContactUs />}>
+                         <Cart/>
+                      </Suspense>)
         },
         {
-            path:"instamart",                        //absolute path: "/cart"
-            element: <Instamart/>
+            path:"instamart",                        //absolute path: "/instamart"
+            element: (<Suspense fallback = {<Shimmer/>}>
+                        <Instamart/>
+                        </Suspense>)
         },
         {
             /*Dynamic Routing : Step 1: Attach element to dynamic path */

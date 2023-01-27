@@ -4,15 +4,9 @@ import useRestaurants from '../utils/useRestaurants.js';
 
 import RestaurantCard from './RestaurantCard.js';
 import Shimmer from './Shimmer';
+import { filterData } from '../utils/helper.js';
 
-function filterData(searchText, allRestaurants)
- {
-     const filteredData = allRestaurants.filter((restaurant)=>
-     {  
-        return  restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase());
-     });
-     return filteredData;
- }
+
 
 const Body = () =>{
 
