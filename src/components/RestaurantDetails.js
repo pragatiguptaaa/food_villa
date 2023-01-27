@@ -33,7 +33,7 @@ const RestaurantDetails = () => {
              <div>
                 <h1>Today Menu</h1>
                  <ul>
-                    { Object.values(restaurantDetails?.menu?.items).map((item) =>(
+                    { restaurantDetails?.menu?.items && Object.values(restaurantDetails?.menu?.items).map((item) =>(
                                <li key = {item.id}> {item.name} </li>
                     ))}
                 </ul>
