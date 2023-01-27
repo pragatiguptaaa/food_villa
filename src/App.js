@@ -1,39 +1,87 @@
 // These are being imported from node_modues now(We have Removed all CDN links).
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-//Default Import
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
 import Header from './components/Header.js';
 import Body from './components/Body';
-//Named import
 import {Footer} from './components/Footer';
+import ContactUs from './components/ContactUs.js';
+import Cart from './components/Cart.js';
+
+import FoodVillaErrorPage from './components/FoodVillaErrorPage.js';
+import AboutUs from "./components/AboutUs";
+import Profile from './components/Profile.js';
+import RestaurantDetails from './components/RestaurantDetails.js';
 
 /**
     -Header
         -Logo
         -Nav bar items
     -Body
-        -Search Bar
+        -Search Input and Search Button
         -Restaurant list
              -Restaurant Card
                 -Image
                 -Name
                 -Rating
                 -Cusines
-        -Footer
-            -Copyright
-            -Other important links 
+    -Footer
+        -Copyright
+        -Other important links 
 **/ 
 
 const FoodVillaAppLayout = () => {
     return(
            <>
                 <Header/>  
-                <Body/>
+                <Outlet/>
                 <Footer/> 
             </>
-         
           );
 };
 
+const foodVillaAppRouter = createBrowserRouter([
+{
+    path: "/",
+    element: <FoodVillaAppLayout />,
+    errorElement: <FoodVillaErrorPage />,
+    children:
+    [
+        {
+            path: "",                           //absolute path: "/"
+            element:<Body />
+        },
+        {
+            path:"about",                       //absolute path: "/about"
+            element: <AboutUs />,
+            children:[
+                {
+                    path:"",                    //absolute path: "/about "
+                    element:<Profile />
+                },
+                {
+                    path:"profile",            //absolute path: "/about/profile"
+                    element:<Profile />
+                }
+            ]
+        },
+        {
+            path:"contact",                     //absolute path: "/contact"
+            element:<ContactUs/>
+        },
+        {
+            path:"cart",                        //absolute path: "/cart"
+            element: <Cart/>
+        },
+        {
+            /*Dynamic Routing : Step 1: Attach element to dynamic path */
+            path:"restaurant/:restaurantId",              //absolute path: "/restaurant/:restaurantId" :restaurantId --- dynamic value
+            element:<RestaurantDetails />
+        }
+    ]
+}
+]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<FoodVillaAppLayout />);
+root.render(<RouterProvider router = {foodVillaAppRouter} />);
