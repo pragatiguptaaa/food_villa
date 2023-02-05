@@ -16,6 +16,7 @@ import AboutUs from "./components/AboutUs";
 import Profile from './components/Profile.js';
 import RestaurantDetails from './components/RestaurantDetails.js';
 import Shimmer from './components/Shimmer.js';
+import Cart from './components/Cart';
 
 import appReduxStore from './utils/AppReduxStore.js';
 
@@ -93,6 +94,10 @@ const foodVillaAppRouter = createBrowserRouter([
             /*Dynamic Routing : Step 1: Attach element to dynamic path */
             path:"restaurant/:restaurantId",              //absolute path: "/restaurant/:restaurantId" :restaurantId --- dynamic value
             element:<RestaurantDetails />
+        }, 
+        {
+            path: "cart",
+            element: <Cart/>
         }
     ]
 }
