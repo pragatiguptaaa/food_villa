@@ -16,7 +16,7 @@ const Header = () =>{
     const isOnline = useOnline();
 
     return(
-        <div className='header m-1 flex justify-between bg-red-400 shadow-xl'>
+        <div className='header m-1 flex justify-between bg-red-600 sm:bg-red-500 md:bg-red-400  shadow-xl'>
             <div>{ isOnline ? "✅" : "🔴" } </div>
             <Title />
             <div>
