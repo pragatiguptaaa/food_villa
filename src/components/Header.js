@@ -16,7 +16,7 @@ const Header = () =>{
     const [loggedIn, setLoggedIn] = useState(true);
 
     return(
-        <div className='header'>
+        <div className='flex'>
             <Title />
             <div className='nav-items'>
                 <ul>
