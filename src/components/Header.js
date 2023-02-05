@@ -17,7 +17,7 @@ const Header = () =>{
     const isOnline = useOnline();
 
     return(
-        <div className='header'>
+        <div className='flex'>
             <div>{ isOnline ? "✅" : "🔴" } </div>
             <Title />
             <div className='nav-items'>
