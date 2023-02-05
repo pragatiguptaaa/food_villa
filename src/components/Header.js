@@ -6,8 +6,7 @@ import Logo from "../assets/images/food_villa_downloaded.png";
 //Named export
  const Title= () =>{
     return (
-        <img className="logo" alt ="Food Villa Logo" src ={Logo} />
-            //  src ="https://i.pinimg.com/474x/e6/17/f1/e617f1bfb9af4d9cf132cd3dec0da072.jpg" />
+        <img className="logo h-28 px-4 py-4" alt ="Food Villa Logo" src ={Logo} />
     );
 };
 
@@ -16,19 +15,20 @@ const Header = () =>{
     const [loggedIn, setLoggedIn] = useState(true);
 
     return(
-        <div className='flex'>
+        <div className='header m-1 flex justify-between bg-red-400 shadow-xl'>
             <Title />
-            <div className='nav-items'>
-                <ul>
-                    <Link to ="/"><li>Home</li></Link>
-                    <Link to ="/contact"><li>Contact</li></Link>
-                    <Link to ="/about"><li>About</li></Link>
-                    <Link to ="/cart"><li>Cart</li></Link>
+            <div>
+                <ul className='nav-items flex py-10'>
+                    <Link className ="px-4" to ="/"><li>Home</li></Link>
+                    <Link className ="px-4"to ="/contact"><li>Contact</li></Link>
+                    <Link className ="px-4" to ="/about"><li>About</li></Link>
+                    <Link className ="px-4" to ="/cart"><li>Cart</li></Link>
                 </ul>
-                <button onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
-                        Click here to {loggedIn?  "Logout" : "Login" }
-                 </button> 
             </div>
+            <button className ="px-4 bg-slate-100" onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
+                    Click here to {loggedIn?  "Logout" : "Login" }
+            </button> 
+           
         </div>
     );
 };
