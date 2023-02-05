@@ -7,7 +7,7 @@ import { RESTAURANT_IMG_COMMON_URL, RESTAURANT_DETAILS_COMMON_URL } from "../con
 const RestaurantDetails = () => {
 
     const {restaurantId} = useParams();
-    const [restaurantDetails , setRestaurantDetails] = useState({});
+    const [restaurantDetails , setRestaurantDetails] = useState();
 
     async function getResturantDetails(){
         const data = await fetch( RESTAURANT_DETAILS_COMMON_URL + restaurantId );
