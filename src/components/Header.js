@@ -15,7 +15,7 @@ const Header = () =>{
     const [loggedIn, setLoggedIn] = useState(true);
 
     return(
-        <div className='header m-1 flex justify-between bg-red-400 shadow-xl'>
+        <div className='header m-1 flex justify-between bg-red-600 sm:bg-red-500 md:bg-red-400  shadow-xl'>
             <Title />
             <div>
                 <ul className='nav-items flex py-10'>
