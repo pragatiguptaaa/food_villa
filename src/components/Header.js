@@ -27,8 +27,8 @@ const Header = () =>{
                     <Link className ="px-4" to ="/cart"><li>Cart</li></Link>
                 </ul>
             </div>
-            <button className ="px-4 bg-slate-100" onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
-                    Click here to {loggedIn?  "Logout" : "Login" }
+            <button className ="m-10 p-1 bg-yellow-200 text-black rounded-md hover:bg-yellow-300" onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
+                    {loggedIn?  "Logout" : "Login" }
             </button> 
            
         </div>
