@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import Logo from "../assets/images/food_villa_downloaded.png"
 
 //Named export
  const Title= () =>{
@@ -16,8 +17,9 @@ const Header = () =>{
     const isOnline = useOnline();
 
     return(
+        <>
+        
         <div className='header m-1 flex justify-between bg-red-600 sm:bg-red-500 md:bg-red-400  shadow-xl'>
-            <div>{ isOnline ? "✅" : "🔴" } </div>
             <Title />
             <div>
                 <ul className='nav-items flex py-10'>
@@ -27,11 +29,16 @@ const Header = () =>{
                     <Link className ="px-4" to ="/cart"><li>Cart</li></Link>
                 </ul>
             </div>
-            <button className ="m-10 p-1 bg-yellow-200 text-black rounded-md hover:bg-yellow-300" onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
-                    {loggedIn?  "Logout" : "Login" }
-            </button> 
+            <div className ="flex">
+                <button className ="m-5 p-5 h-30 w-30 content-center bg-yellow-200 text-black rounded-md hover:bg-yellow-300" onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
+                        {loggedIn?  "Logout" : "Login" } 
+                 </button> 
+            <div className = "p-1 m-1">{ isOnline ? "✅" : "🔴" } </div>
+            </div>
+            
            
         </div>
+        </>
     );
 };
 

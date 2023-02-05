@@ -13,7 +13,7 @@ const RestaurantDetails = () => {
     return ( (!restaurantDetails)
              ? (<Shimmer/>) 
              : (<div className ="m-2 min-w-full">
-             <div  >
+             <div >
              <h1>Restaurant Id: {restaurantId}</h1>
                 <h2>Restaurant Name: {restaurantDetails?.name} </h2>
                 <img className ="h-100 w-100  px-4 py-4" alt ="Restaurant image" src= {RESTAURANT_IMG_COMMON_URL + restaurantDetails.cloudinaryImageId} />

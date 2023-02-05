@@ -34,7 +34,7 @@ const Body = () =>{
                                 Search
                             </button>
                         </div>
-                        <div className="restaurant-list flex bg-white p-2 m-2">
+                        <div className="restaurant-list flex flex-wrap bg-white p-2 m-2">
                             {
                                 filteredRestaurants?.length === 0 
                                 ? (<>
