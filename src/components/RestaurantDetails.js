@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import Shimmer from "./Shimmer";
 import { RESTAURANT_IMG_COMMON_URL } from "../constants";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
-import { addItemAction } from "../utils/cartSlice";
+import { addItem} from "../utils/cartSlice";
 
 /**Dynamic Routing : Step 3: Read dynamic URL to show details */
 const RestaurantDetails = () => {
@@ -16,7 +16,7 @@ const RestaurantDetails = () => {
     const dispatch = useDispatch();
 
     const addFoodItem = (item) =>{
-        dispatch(addItemAction(item));
+        dispatch(addItem(item));
     }
 
     return ( (!restaurantDetails)
