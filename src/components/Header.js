@@ -26,6 +26,7 @@ const Header = () =>{
                     <Link className ="px-4"to ="/contact"><li>Contact</li></Link>
                     <Link className ="px-4" to ="/about"><li>About</li></Link>
                     <Link className ="px-4" to ="/cart"><li>Cart</li></Link>
+                    <Link className ="px-4" to ="/instamart"><li>Instamart</li></Link>
                 </ul>
             </div>
             <button className ="m-10 p-1 bg-yellow-200 text-black rounded-md hover:bg-yellow-300" onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
