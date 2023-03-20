@@ -2,11 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import food_villa_downloaded from "../assets/images/food_villa_downloaded.png"
 
 //Named export
  const Title= () =>{
     return (
-        <img className="logo h-28 px-4 py-4" alt ="Food Villa Logo" src ={Logo} />
+        <img className="logo h-28 px-4 py-4" alt ="Food Villa Logo" src ={food_villa_downloaded} />
     );
 };
 

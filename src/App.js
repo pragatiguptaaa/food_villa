@@ -54,7 +54,7 @@ const foodVillaAppRouter = createBrowserRouter([
     [
         {
             path: "",                           //absolute path: "/"
-            element:<Body />
+            element:<Body userData={{"name":"Pragati", "mail": "connect2pragatigupta@gmail.com"}}/>
         },
         {
             path:"about",                       //absolute path: "/about"

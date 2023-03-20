@@ -9,7 +9,7 @@ const useRestaurantDetails = (restaurantId) =>{
         const data = await fetch( RESTAURANT_DETAILS_COMMON_URL + restaurantId );
         const json = await data.json();
         console.log(json.data);
-        setRestaurantDetails(json.data);
+        setRestaurantDetails(json.data?.cards[0]?.card.card.info);
     }
 
     useEffect(()=>{
