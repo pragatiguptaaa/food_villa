@@ -1,15 +1,22 @@
 import React from "react";
+import {useState} from "react";
 
 const Section = ({title, description}) =>{
+
+const [visible, setVisible] = useState(false);
+
 return (
     <>
     <div className="border border-black p-2 m-2">
         <h1 className="text-xl font-bold ">{title}</h1>
-        <p>{description}</p>
+        <button 
+            onClick = {()=>setVisible(!visible)}>
+            { visible ? "Hide Description": "Show Description"}
+        </button>
+        {visible && <p>{description}</p>}
     </div>
     </>
-)
-}
+)}
 
 const Instamart = () =>{
     return(
