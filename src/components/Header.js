@@ -17,7 +17,7 @@ const Header = () =>{
 
     const [loggedIn, setLoggedIn] = useState(true);
     const isOnline = useOnline();
-    const {user} = useContext(UserContext);
+    const {user, admin} = useContext(UserContext);
 
     return(
         <div className='header m-1 flex justify-between bg-red-600 sm:bg-red-500 md:bg-red-400  shadow-xl'>
@@ -32,7 +32,7 @@ const Header = () =>{
                 </ul>
             </div>
             <div> 
-                <h1>{loggedIn && user.name} { isOnline ? "✅" : "🔴" }</h1>
+                <h1>{loggedIn && (user.name +" "+ admin.name)} { isOnline ? "✅" : "🔴" }</h1>
                 <button className ="m-10 p-1 bg-yellow-200 text-black rounded-md hover:bg-yellow-300" onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
                          {loggedIn?  "Logout" : "Login" }
                 </button> 

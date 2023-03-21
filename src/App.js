@@ -1,5 +1,5 @@
 // These are being imported from node_modues now(We have Removed all CDN links).
-import React, {lazy, Suspense} from 'react';
+import React, {useState, lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -35,14 +35,15 @@ import UserContext from './utils/UserContext.js';
 **/ 
 
 const FoodVillaAppLayout = () => {
-    const userData = {name:"OverridedName", email: "Overridedmail@gmail.com"}
+    const userDataInitialValue = {name:"OverridedName", email:"Overrided email"}
+    const [userData, setUserData]= useState(userDataInitialValue);
     return(
            <>
                 <Header/> 
-                <UserContext.Provider value ={{user: userData}}> 
-                <Outlet/>
-                <Footer/> 
-            </UserContext.Provider>
+                <UserContext.Provider value ={{user: userData, setUser: setUserData}}> 
+                    <Outlet/>
+                    <Footer/> 
+                </UserContext.Provider>
             </>
           );
 };
