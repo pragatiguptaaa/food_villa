@@ -1,14 +1,23 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
 import Shimmer from "./Shimmer";
 import { RESTAURANT_IMG_COMMON_URL } from "../constants";
 import useRestaurantDetails from "../utils/useRestaurantDetails";
+import { addItem} from "../utils/cartSlice";
 
 /**Dynamic Routing : Step 3: Read dynamic URL to show details */
 const RestaurantDetails = () => {
 
     const {restaurantId} = useParams();
     const restaurantDetails = useRestaurantDetails(restaurantId);
+
+    const dispatch = useDispatch();
+
+    const addFoodItem = (item) =>{
+        dispatch(addItem(item));
+    }
 
     return ( (!restaurantDetails)
              ? (<Shimmer/>) 
@@ -24,7 +33,12 @@ const RestaurantDetails = () => {
                 <h1>Today Menu</h1>
                  <ul>
                     { restaurantDetails?.menu?.items && Object.values(restaurantDetails?.menu?.items).map((item) =>(
-                               <li key = {item.id}> {item.name} </li>
+                     <>
+                               <li key = {item.id}> 
+                                    {item.name} - 
+                                    <button onClick={(item) => addFoodItem(item)}> Add Item </button>
+                               </li>
+                     </>
                     ))}
                 </ul>
             </div>

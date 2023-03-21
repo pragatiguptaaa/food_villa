@@ -1,7 +1,8 @@
-// These are being imported from node_modues now(We have Removed all CDN links).
-import React, {useState, lazy, Suspense} from 'react';
+// These are being imported from node_modules now(We have Removed all CDN links).
+import React, {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from 'react-redux';
 
 import Header from './components/Header.js';
 import Body from './components/Body';
@@ -15,6 +16,9 @@ import AboutUs from "./components/AboutUs";
 import Profile from './components/Profile.js';
 import RestaurantDetails from './components/RestaurantDetails.js';
 import Shimmer from './components/Shimmer.js';
+import Cart from './components/Cart';
+
+import appReduxStore from './utils/AppReduxStore.js';
 
 /**
     -Header
@@ -36,9 +40,11 @@ import Shimmer from './components/Shimmer.js';
 const FoodVillaAppLayout = () => {
     return(
            <>
-                <Header/> 
-                <Outlet/>
-                <Footer/> 
+                <Provider store = {appReduxStore}>
+                    <Header/>  
+                    <Outlet/>
+                    <Footer/> 
+                </Provider>
             </>
           );
 };
@@ -88,6 +94,10 @@ const foodVillaAppRouter = createBrowserRouter([
             /*Dynamic Routing : Step 1: Attach element to dynamic path */
             path:"restaurant/:restaurantId",              //absolute path: "/restaurant/:restaurantId" :restaurantId --- dynamic value
             element:<RestaurantDetails />
+        }, 
+        {
+            path: "cart",
+            element: <Cart/>
         }
     ]
 }
