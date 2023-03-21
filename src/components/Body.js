@@ -5,13 +5,11 @@ import useRestaurants from '../utils/useRestaurants.js';
 import RestaurantCard from './RestaurantCard.js';
 import Shimmer from './Shimmer';
 import { filterData } from '../utils/helper.js';
-import UserContext from '../utils/UserContext.js';
 
 const Body = () =>{
 
     const [searchText, setSearchText] = useState("");
     const [allRestaurants, filteredRestaurants, setFilteredRestaurants] = useRestaurants();
-    const {user, setUser} = useContext(UserContext);
     
     return  (   (allRestaurants?.length === 0 )
                 ? (<Shimmer />)
@@ -24,7 +22,6 @@ const Body = () =>{
                                 value={searchText}
                                 onChange={(e) =>{
                                     setSearchText(e.target.value);
-                                    setUser({name:e.target.value, email: e.target.value})
                                 }} >
                             </input>
                             <button 
