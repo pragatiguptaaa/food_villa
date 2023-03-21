@@ -36,7 +36,6 @@ const Header = () =>{
                 <button className ="m-10 p-1 bg-yellow-200 text-black rounded-md hover:bg-yellow-300" onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
                          {loggedIn?  "Logout" : "Login" }
                 </button> 
-            
             </div>
         
            
