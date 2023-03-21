@@ -15,7 +15,6 @@ import AboutUs from "./components/AboutUs";
 import Profile from './components/Profile.js';
 import RestaurantDetails from './components/RestaurantDetails.js';
 import Shimmer from './components/Shimmer.js';
-import UserContext from './utils/UserContext.js';
 
 /**
     -Header
@@ -35,15 +34,11 @@ import UserContext from './utils/UserContext.js';
 **/ 
 
 const FoodVillaAppLayout = () => {
-    const userDataInitialValue = {name:"OverridedName", email:"Overrided email"}
-    const [userData, setUserData]= useState(userDataInitialValue);
     return(
            <>
                 <Header/> 
-                <UserContext.Provider value ={{user: userData, setUser: setUserData}}> 
-                    <Outlet/>
-                    <Footer/> 
-                </UserContext.Provider>
+                <Outlet/>
+                <Footer/> 
             </>
           );
 };
