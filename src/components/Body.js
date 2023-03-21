@@ -8,7 +8,7 @@ import { filterData } from '../utils/helper.js';
 
 
 
-const Body = (props) =>{
+const Body = () =>{
 
     const [searchText, setSearchText] = useState("");
     const [allRestaurants, filteredRestaurants, setFilteredRestaurants] = useRestaurants();
@@ -43,7 +43,7 @@ const Body = (props) =>{
                                 : filteredRestaurants?.map((restaurant) =>{ 
                                   return (
                                             <Link to = {"/restaurant/"+restaurant.data.id} key ={restaurant.data.id}>
-                                                <RestaurantCard {...restaurant.data} userData={props.userData} />
+                                                <RestaurantCard {...restaurant.data} />
                                             </Link> 
                                          )
                                   })
