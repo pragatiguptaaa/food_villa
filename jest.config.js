@@ -88,6 +88,7 @@ module.exports = {
   // ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
+  //find out the path is relative to src or what?
   moduleNameMapper: {
     "\\.(jpg|png|svg)$": "../test/mocks/dummyImage.js",
   },

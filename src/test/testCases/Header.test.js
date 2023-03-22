@@ -12,4 +12,32 @@ test("Should load the Food Villa Logo", () =>{
                                                     </Provider>
                           </StaticRouter>);
     console.log(header);
-})
+    const Logo = header.getByTestId('foodVillaLogo');
+    console.log(Logo);
+    //logo.src -->Memoized props
+    expect(Logo.src).toBe("http://localhost/dummyImage.png");
+});
+
+test("Status should be online", () =>{
+    const header = render(<StaticRouter>
+                                    <Provider store ={appReduxStore}>
+                                                        <Header/>
+                                                    </Provider>
+                          </StaticRouter>);
+    const onlineStatus = header.getByTestId('online-status');
+    console.log(onlineStatus);
+    //Use Windows +. to open emoji bar in VS Code.
+    expect(onlineStatus.innerHTML).toBe("✅");
+});
+
+test("Status should be online", () =>{
+    const header = render(<StaticRouter>
+                                    <Provider store ={appReduxStore}>
+                                                        <Header/>
+                                                    </Provider>
+                          </StaticRouter>);
+    const cart = header.getByTestId('cart');
+    console.log(cart);
+    //Use Windows +. to open emoji bar in VS Code.
+    expect(cart.innerHTML).toBe("Cart - 0 items added");
+});

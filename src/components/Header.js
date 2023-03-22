@@ -8,7 +8,7 @@ import food_villa_downloaded from "../assets/images/food_villa_downloaded.png"
 //Named export
  const Title= () =>{
     return (
-        <img className="logo h-28 px-4 py-4" alt ="Food Villa Logo" src ={food_villa_downloaded} />
+        <img data-testid="foodVillaLogo" className="logo h-28 px-4 py-4" alt ="Food Villa Logo" src ={food_villa_downloaded} />
     );
 };
 
@@ -26,12 +26,12 @@ const Header = () =>{
                     <Link className ="px-4" to ="/"><li>Home</li></Link>
                     <Link className ="px-4"to ="/contact"><li>Contact</li></Link>
                     <Link className ="px-4" to ="/about"><li>About</li></Link>
-                    <Link className ="px-4" to ="/cart"><li>Cart - {cartItems.length} items added </li></Link>
+                    <Link  className ="px-4" to ="/cart"><li data-testid="cart">Cart - {cartItems.length} items added</li></Link>
                     <Link className ="px-4" to ="/instamart"><li>Instamart</li></Link>
                 </ul>
             </div>
-            <div> 
-                <h1>{ isOnline ? "✅" : "🔴" }</h1>
+            <div > 
+                <h1 data-testid ="online-status">{ isOnline ? "✅" : "🔴" }</h1>
                 <button className ="m-10 p-1 bg-yellow-200 text-black rounded-md hover:bg-yellow-300" onClick={() => { setLoggedIn((prevValue) => !prevValue); } } > 
                          {loggedIn?  "Logout" : "Login" }
                 </button> 
