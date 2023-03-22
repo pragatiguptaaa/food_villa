@@ -31,11 +31,11 @@ const RestaurantDetails = () => {
              </div>
              <div>
                 <h1>Today Menu</h1>
-                 <ul>
+                 <ul data-testid = "restaurantMenu">
                     { restaurantDetails?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards?.map((item) =>(
                      
                                <li key = {item?.card?.info?.id}> 
-                                    {item?.card?.info?.name} - <button onClick={() => addFoodItem(item?.card?.info)}> Add Item </button>
+                                    {item?.card?.info?.name} - <button data-testid = "item-button" onClick={() => addFoodItem(item?.card?.info)}> Add Item </button>
                                </li>
                      
                     ))}

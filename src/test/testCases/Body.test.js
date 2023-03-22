@@ -1,5 +1,5 @@
-import { fireEvent, render, waitFor } from "@testing-library/react";
-import { toBeInTheDocument } from "@testing-library/jest-dom";
+import { fireEvent, render, waitFor , act} from "@testing-library/react";
+import  "@testing-library/jest-dom";
 import {StaticRouter} from "react-router-dom/server";
 import { Provider } from "react-redux";
 
@@ -21,9 +21,7 @@ test("Should render shimmer", () =>{
                                 <Body/>
                             </Provider>
                          </StaticRouter>);
-    console.log(body);
     const shimmer = body.getByTestId("shimmer");
-    console.log(shimmer);
     expect(shimmer.innerHTML).toBe("Hello, I am Shimmer.");
     //Uncomment once you craete appropriate shimmer - Note: even insta's shimmer contain random no. of grey cards.
     //expect(shimmer.children.length).toBe(10);
@@ -38,12 +36,9 @@ test("Should render search bar and restautrant cards", async() =>{
                          </StaticRouter>);
     
     const searchBtn = await waitFor( () => body.getByTestId("search-btn"));
-    console.log(body);
-    console.log(searchBtn);
     expect(searchBtn.innerHTML).toBe("Search");
 
     const restaurantsList =  await waitFor( () =>body.getByTestId("restaurantsList"));
-    console.log(restaurantsList);
     expect(restaurantsList).toBeInTheDocument();
     expect(restaurantsList.children.length).toBe(3);
 });
@@ -60,8 +55,13 @@ test("Should render only the filtered resaurants as per the search input", async
     expect(restaurantsList.children.length).toBe(3);
 
     const searchInput = await waitFor( () =>body.getByTestId("search-input"));
-    fireEvent.change(searchInput, { target: {value: "Food"}});
+    act(() => {
+        fireEvent.change(searchInput, { target: {value: "Food"}});
+      });
+    
     const searchBtn = await waitFor(() => body.getByTestId("search-btn"));
-    fireEvent.click(searchBtn);
+    act(() => {
+        fireEvent.click(searchBtn);
+      });
     expect(restaurantsList.children.length).toBe(2);
 });
