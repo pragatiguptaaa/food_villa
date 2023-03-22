@@ -16,7 +16,7 @@ const Body = () =>{
                 :(
                     <>  
                         <div className = "search-container flex p-2 m-2 justify-end">
-                            <input p-2 m-2 className ="search-input h-13 border-emerald-50 bg-white focus:bg-blue-100"
+                            <input data-testid = "search-input" className ="h-13 border-emerald-50 bg-white focus:bg-blue-100"
                                 type="text" 
                                 placeholder="Search your favorite restaurants here..."
                                 value={searchText}

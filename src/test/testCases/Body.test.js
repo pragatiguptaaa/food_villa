@@ -1,4 +1,4 @@
-import { render, waitFor } from "@testing-library/react";
+import { fireEvent, render, waitFor } from "@testing-library/react";
 import { toBeInTheDocument } from "@testing-library/jest-dom";
 import {StaticRouter} from "react-router-dom/server";
 import { Provider } from "react-redux";
@@ -46,4 +46,22 @@ test("Should render search bar and restautrant cards", async() =>{
     console.log(restaurantsList);
     expect(restaurantsList).toBeInTheDocument();
     expect(restaurantsList.children.length).toBe(3);
+});
+
+
+test("Should render only the searched resaurants", async() =>{
+    const body = render(<StaticRouter>
+                            <Provider store ={appReduxStore}>
+                                <Body/>
+                            </Provider>
+                         </StaticRouter>);
+    
+    const restaurantsList =  await waitFor( () =>body.getByTestId("restaurantsList"));
+    expect(restaurantsList.children.length).toBe(3);
+
+    const searchInput = await waitFor( () =>body.getByTestId("search-input"));
+    fireEvent.change(searchInput, { target: {value: "Food"}});
+    const searchBtn = await waitFor(() => body.getByTestId("search-btn"));
+    fireEvent.click(searchBtn);
+    expect(restaurantsList.children.length).toBe(2);
 });
