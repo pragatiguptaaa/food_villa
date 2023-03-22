@@ -16,7 +16,6 @@ import AboutUs from "./components/AboutUs";
 import Profile from './components/Profile.js';
 import RestaurantDetails from './components/RestaurantDetails.js';
 import Shimmer from './components/Shimmer.js';
-import Cart from './components/Cart';
 
 import appReduxStore from './utils/AppReduxStore.js';
 

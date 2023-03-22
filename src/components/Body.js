@@ -12,11 +12,11 @@ const Body = () =>{
     const [allRestaurants, filteredRestaurants, setFilteredRestaurants] = useRestaurants();
     
     return  (   (allRestaurants?.length === 0 )
-                ? (<Shimmer />)
+                ? (<Shimmer/>)
                 :(
                     <>  
                         <div className = "search-container flex p-2 m-2 justify-end">
-                            <input p-2 m-2 className ="search-input h-13 border-emerald-50 bg-white focus:bg-blue-100"
+                            <input data-testid = "search-input" className ="h-13 border-emerald-50 bg-white focus:bg-blue-100"
                                 type="text" 
                                 placeholder="Search your favorite restaurants here..."
                                 value={searchText}
@@ -24,7 +24,7 @@ const Body = () =>{
                                     setSearchText(e.target.value);
                                 }} >
                             </input>
-                            <button 
+                            <button data-testid ="search-btn"
                                 className="search-button p-2 m-2 bg-blue-500 text-black rounded-md hover:bg-blue-600"
                                 onClick={() => {
                                     setFilteredRestaurants(filterData(searchText, allRestaurants));
@@ -32,7 +32,7 @@ const Body = () =>{
                                 Search
                             </button>
                         </div>
-                        <div className="flex flex-wrap bg-white p-4 m-4">
+                        <div data-testid = "restaurantsList" className="flex flex-wrap bg-white p-4 m-4">
                             {
                                 filteredRestaurants?.length === 0 
                                 ? (<>
