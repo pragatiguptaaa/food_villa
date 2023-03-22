@@ -49,7 +49,7 @@ test("Should render search bar and restautrant cards", async() =>{
 });
 
 
-test("Should render only the searched resaurants", async() =>{
+test("Should render only the filtered resaurants as per the search input", async() =>{
     const body = render(<StaticRouter>
                             <Provider store ={appReduxStore}>
                                 <Body/>
