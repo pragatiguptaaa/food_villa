@@ -12,7 +12,7 @@ const Cart = () =>{
     return(
         <>
            <h1> {cartItems.length} Items added </h1>
-           <div className="flex">
+           <div className="flex flex-wrap">
            { 
                 cartItems.map((cartItem) => (
                     <FoodItem key = {cartItem.id} {...cartItem} />
