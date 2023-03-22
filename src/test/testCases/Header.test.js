@@ -18,7 +18,7 @@ test("Should load the Food Villa Logo", () =>{
     expect(Logo.src).toBe("http://localhost/dummyImage.png");
 });
 
-test("Status should be online", () =>{
+test("Status should be online on rendering header", () =>{
     const header = render(<StaticRouter>
                                     <Provider store ={appReduxStore}>
                                                         <Header/>
@@ -30,7 +30,7 @@ test("Status should be online", () =>{
     expect(onlineStatus.innerHTML).toBe("✅");
 });
 
-test("Status should be online", () =>{
+test("No. of cart items should be zero on rendering header", () =>{
     const header = render(<StaticRouter>
                                     <Provider store ={appReduxStore}>
                                                         <Header/>
